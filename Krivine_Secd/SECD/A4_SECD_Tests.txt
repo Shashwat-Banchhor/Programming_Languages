@@ -1,0 +1,76 @@
+
+(*BASE DEF*)
+let b1= Bool true;;
+let b2  = Bool false;;
+let e1 = Var("x");;
+let e2 = Const 3;;
+let e3 = Const 7;;
+(*ARITHMETIC DEF*)
+let e4 = Plus (e2,e3);;
+let e5 = Sub(e2,e3);;
+let e6 = Mult (e2,e3);;
+let e7 = Grt(e2,e3);;
+let e8 = Grt(e3,e2);;
+let e9 = Grte(e2,e3);;
+let e10 = Grte(e2,e2);;
+let e11 = Grte(e3,e2);;
+let e12 = Let(e2,e2);;
+let e13 = Let(e3,e2);;
+let e14 = Lete(e3,e2);;
+let e15 = Sub(e2,e3);;
+let e18 = Tup([e1;e2;e3;e4;e5]);;
+(*CONDITIONAL DEF*)
+let e14 = ITE(e13,e2,e14);;
+(*ABSTRACTIONS DEF*)
+let e15 = Pair(Lambda (Var "x",Mult(Var "x",Const 4)),Plus (Const 2, Const 1));;
+let e20 = Lambda(Var "x",Plus(Plus(Var "x",Var "y"),Var "z"));;
+let e21 = Pair (e20,e2);;
+(*DEFINITINS DEF*)
+let d1 = Def(Var "x" , Const 333);;
+let d2 = Def(Var "y" , Const 333);;
+let d3 = Def(Var "x" , Const 300);;
+let d4 = Def(Var "z", Plus(Var "y",Const 56));;
+ (*SEQUENTIAL_DEFINITIONS DEF*)
+let s1 = Sdef(d1,d2);;
+(*PARALLEL_DEFINITIONS DEF*)
+let p1 = Pdef(d1,d2);;
+let p2 = Pdef(d1,d3);;  (* raise Same_Var_Cant_be_Defined_Parallely *)
+(*LOCAL_DEFINITIONS *)
+let l1 = Ldef(d2,d4)
+
+(* QUALIFICATION *)
+let e16 = Letdef(d1,Plus(Var "x" ,Const 17));; 
+let e17 = Letdef(s1,Plus(Var "x" ,Const 17));;
+let e19 = Letdef(l1,Equ(Var "z" , Const 389));;
+
+
+
+
+(*  ---- COMPILE and EXECUTE TESTCASES------*)
+
+execute([],table,compile e1,[]);;
+execute([],table,compile e2,[]);;
+execute([],table,compile e3,[]);;
+execute([],table,compile e4,[]);;
+execute([],table,compile e5,[]);;
+execute([],table,compile e6,[]);;
+execute([],table,compile e7,[]);;
+execute([],table,compile e8,[]);;
+execute([],table,compile e9,[]);;
+execute([],table,compile e10,[]);;
+execute([],table,compile e11,[]);;
+execute([],table,compile e12,[]);;
+execute([],table,compile e13,[]);;
+execute([],table,compile e14,[]);;
+execute([],table,compile e15,[]);;
+execute([],table,compile e16,[]);;
+compile e17;;
+execute([],table,compile e17,[]);;
+compile e18;;
+execute([],table,compile e18,[]);;
+compile e19;;
+execute([],table,compile e19,[]);;
+compile e20;;
+execute([],table,compile e20,[]);;
+compile e21;;
+execute([],table,compile e21,[]);;

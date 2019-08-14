@@ -1,0 +1,87 @@
+	*************TestCases *********
+(*BASE DEF*)
+let b1= Bool true;;
+let b2  = Bool false;;
+let e1 = Var("x");;   
+let e2 = Const 3;;
+let e3 = Const 7;;
+(*ARITHMETIC DEF*)     
+let e4 = Plus (e2,e3);;
+let e5 = Sub(e2,e4);;
+let e6 = Mult (e2,e3);;
+let e7 = Grt(e2,e3);;
+let e8 = Grt(e3,e2);;
+let e9 = Grte(e2,e3);;
+let e10 = Grte(e2,e2);;
+let e11 = Grte(e3,e2);;
+let e12 = Let(e2,e2);;
+let e13 = Let(e3,e2);;
+let e14 = Lete(e3,e2);;
+let e15 = Lete(e2,e3);;
+let e16 = Lete(e2,e2);;
+let e17 = Equ(e2,e2);;
+let e18 = Equ(e2,e3);;
+let e19 = Sub(Sub (e2,Mult(e2,e3)),e5);;
+let e20 = Tup([e1;e2;e3;e4;e5]);;
+let e21 = Plus(Var "x",Var "y");;
+let e22 = Lambda(Var "x",e21);; 
+let e23 = Pair(e22,e3);;
+let e24 = ITE(Lete(Const 4 , Sub(Sub(Sub(Const 2,Const 1),Const 4),Const (8))),Const 5,Const 6);;
+
+
+
+
+
+let c1= Clos([],e1);;
+let c2= Clos([],e2);;
+let c3= Clos([],e3);;
+let c4= Clos([],e4);;
+let c5= Clos([],e5);;
+let c6= Clos([],e6);;
+let c7= Clos([],e7);;
+let c8= Clos([],e8);;
+let c9= Clos([],e9);;
+let c10= Clos([],e10);;
+let c11= Clos([],e11);;
+let c12= Clos([],e12);;
+let c13= Clos([],e13);;
+let c14= Clos([],e14);;
+let c15= Clos([],e15);;
+let c16= Clos([],e16);;
+let c17= Clos([],e17);;
+let c18= Clos([],e18);;
+let c19= Clos([],e19);;
+let c20= Clos([],e20);;
+let c21= Clos([(Var "x",Vclos([],Const 3));(Var "y",Vclos([],Const 7))],e21);;
+let c22= Clos([],e22);;
+let c23= Clos([(Var "y",Vclos([],Const 7))],e23);;
+let c24= Clos([],e24);;
+
+
+
+
+
+execute(c1,[]);;
+execute(c2,[]);;
+execute(c3,[]);;
+execute(c4,[]);;
+execute(c5,[]);;
+execute(c6,[]);;
+execute(c7,[]);;
+execute(c8,[]);;
+execute(c9,[]);;
+execute(c10,[]);;
+execute(c11,[]);;
+execute(c12,[]);;
+execute(c13,[]);;
+execute(c14,[]);;
+execute(c15,[]);;
+execute(c16,[]);;
+execute(c17,[]);;
+execute(c18,[]);;
+execute(c19,[]);;
+execute(c20,[]);;
+execute(c21,[]);;
+execute(c22,[]);;
+execute(c23,[]);;
+execute(c24,[]);;
